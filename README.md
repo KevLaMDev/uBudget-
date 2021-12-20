@@ -54,3 +54,7 @@
 * GitHub will have all files
 * Shared Repository with contributors
 * Merge parties where we are all present to review code to merge to the development branch. As the project progresses we will merge to the main branch.
+
+## Domain Modeling
+
+![Domain Modeling Diagram](/assests/uBudget%20Jam%201.png)
