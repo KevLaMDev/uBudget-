@@ -1,6 +1,6 @@
 # uBudget-
 
-# Code Fellows 201 Projects
+## Code Fellows 201 Projects
 
 ## Group Members: Zachary Flowers Kevin LaMarca, Joshua McCluskey
 
@@ -53,8 +53,30 @@
 
 * GitHub will have all files
 * Shared Repository with contributors
-* Merge parties where we are all present to review code to merge to the development branch. As the project progresses we will merge to the main branch.
+* Merge parties where we are all present to review code to merge to the development branch. As the project progresses we will merge to the main branch with 100% concensus.
 
 ## Domain Modeling
 
 ![Domain Modeling Diagram](/assests/uBudget%20Jam%201.png)
+
+## Wireframes
+
+### Landing Page
+
+![Landing Wireframe](/assests/uBudget%20Jam%202.png)
+
+### Resources
+
+![Resources Wireframe](/assests/uBudget%20Jam%203.png)
+
+### About US
+
+![About Us Wireframe](/assests/uBudget%20Jam%204.png)
+
+### Chart and Graphs
+
+![Charts and Graphs Wireframe](/assests/uBudget%20Jam%205.png)
+
+## Database Schema Diagram
+
+<!-- ![Database Schema Diagram]() -->
