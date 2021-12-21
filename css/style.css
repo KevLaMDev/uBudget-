@@ -1,0 +1,31 @@
+* {
+  background-color: coral;
+}
+
+header{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+header img{
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+}
+
+header ul {
+  margin-top: 3em;
+}
+
+header li {
+  margin: 9px;
+}
+
+
+h1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
