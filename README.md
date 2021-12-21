@@ -55,10 +55,6 @@
 * Shared Repository with contributors
 * Merge parties where we are all present to review code to merge to the development branch. As the project progresses we will merge to the main branch with 100% concensus.
 
-## Domain Modeling
-
-![Domain Modeling Diagram](/assests/uBudget%20Jam%201.png)
-
 ## Wireframes
 
 ### Landing Page
@@ -77,6 +73,10 @@
 
 ![Charts and Graphs Wireframe](/assests/uBudget%20Jam%205.png)
 
-## Database Schema Diagram
+## User Stories
 
-<!-- ![Database Schema Diagram]() -->
+[User Stories on Trello](https://trello.com/b/phCPZ31N/codefellows-201-project-%CE%BCbudget)
+
+## Domain Modeling
+
+![Domain Modeling Diagram](/assests/uBudget%20Jam%201.png)
