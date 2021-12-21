@@ -1,12 +1,19 @@
+/* Cuurent Google Font link Used HTML: <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">   ;  Cuurent CSS used for google font: font-family: 'Gugi', cursive; */
+
+/* Unviversal Selectors: */
+
 * {
-  background-color: coral;
+  background-color: #427BD2;
 }
+
+/* Header Selectors: */
 
 header{
   display: flex;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
+  margin-top: 30px;
 }
 
 header img{
@@ -20,12 +27,47 @@ header ul {
 }
 
 header li {
-  margin: 9px;
+  margin: 5px;
+  font-size: 20px;
+  font-family: 'Gugi', cursive;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+nav a:hover{
+  color: coral;
+}
+
+/* Main Selectors:  */
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+  font-family: 'Gugi', cursive;
+  margin-top: 30px;
+}
+
+#tutorial p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px;
+  font-family: 'Gugi', cursive;
+  margin-top: 30px;
 }
 
 
-h1 {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+/* Footer Selectors:  */
+
+footer {
+  background-color: #444;
+  height: 15em;
+  color: #aaa;
+  justify-content: right;
+  margin-top: 80%;
+  font-family: 'Gugi', cursive;
 }
