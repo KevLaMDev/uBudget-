@@ -1,6 +1,6 @@
 # uBudget-
 
-# Code Fellows 201 Projects
+## Code Fellows 201 Projects
 
 ## Group Members: Zachary Flowers Kevin LaMarca, Joshua McCluskey
 
@@ -31,6 +31,7 @@
 * Not Adequately Contributing
   * Checking in with someone who is not adequately contributing and see how they are
   * If they're not contributing adequately and not responding bring it up with instructor team
+* Ensure shared and equal contribution from each member happens. Check with person if they haven't shared or spoken in past 30 minutes. Check if they feel equally heard or ignored or want to share ideas.
 
 ##### Communication Plan
 
@@ -53,4 +54,30 @@
 
 * GitHub will have all files
 * Shared Repository with contributors
-* Merge parties where we are all present to review code to merge to the development branch. As the project progresses we will merge to the main branch.
+* Merge parties where we are all present to review code to merge to the development branch. As the project progresses we will merge to the main branch with 100% concensus.
+
+## Wireframes
+
+### Landing Page
+
+![Landing Wireframe](/assests/uBudget%20Jam%202.png)
+
+### Chart and Graphs
+
+![Charts and Graphs Wireframe](/assests/uBudget%20Jam%205.png)
+
+### Resources
+
+![Resources Wireframe](/assests/uBudget%20Jam%203.png)
+
+### About US
+
+![About Us Wireframe](/assests/uBudget%20Jam%204.png)
+
+## User Stories
+
+[User Stories on Trello](https://trello.com/b/phCPZ31N/codefellows-201-project-%CE%BCbudget)
+
+## Domain Modeling
+
+![Domain Modeling Diagram](/assests/uBudget%20Jam%201%20(1).png)
