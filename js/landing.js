@@ -373,7 +373,7 @@ function handleFormSubmission(event) {
 function handleButtonClick(event) {
   event.preventDefault();
 
-  //Stingify the properties to be stored in local storage
+  //Stingify the properties to be stored in local storage 
   let stringifiedUser = JSON.stringify(userArr);
 
   //Save to local storage
