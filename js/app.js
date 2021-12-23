@@ -10,7 +10,7 @@ let expenseArray = [1, 2, 3];
 // DOM
 
 
-function FederalTaxCalc() {
+User.prototype.federalTaxCalc = function() {
   let tax;
   if (this.income >= 523,601) tax = .37;
   if (this.income >= 209,426) tax = .35;
@@ -21,7 +21,9 @@ function FederalTaxCalc() {
   if (this.income < 9,951) tax = .10;
   let afterTax = this.income - (this.income * tax);
   this.afterTax = afterTax;
-}
+};
+
+
 
 // func 'FederalTaxCalc'
   // input: user.income
