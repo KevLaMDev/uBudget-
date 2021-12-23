@@ -10,6 +10,7 @@ let expenseArray = [1, 2, 3];
 // DOM
 
 
+
 // func 'FederalTaxCalc'
 // input: user.income
 // output: user.income - pertaining tax bracket deduction
