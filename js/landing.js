@@ -28,6 +28,17 @@ function User(person = 'Joe Doe', income = 1, housing = 0, food = 1, car = 0 ,in
   this.misc = misc;
   this.other = other;
   userArr.push(this);
+  this.federalTaxCalc = function () {
+    let tax;
+    if (this.income >= 523,601) tax = .37;
+    if (this.income >= 209,426) tax = .35;
+    if (this.income >= 164,926) tax = .32;
+    if (this.income >= 86,376) tax = .24;
+    if (this.income >= 40,526) tax = .22;
+    if (this.income >= 9,951) tax = .12;
+    if (this.income < 9,951) tax = .10;
+    let afterTax = this.income - (this.income * tax);
+    this.afterTax = afterTax;
 
 }
 
@@ -405,8 +416,3 @@ function handleFormSubmission(event) {
 
 // Event Listeners
 document.querySelector('form').addEventListener('submit', handleFormSubmission);
-
-// buttonSubmit.addEventListener('click', handleButtonClick);
-
-
-
