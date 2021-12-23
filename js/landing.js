@@ -379,6 +379,8 @@ function handleButtonClick(event) {
   //Save to local storage
   localStorage.setItem('userObjects', stringifiedUser);
 
+  window.location.replace('../chart.html');
+
 }
 
 // Event Listeners
