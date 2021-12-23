@@ -6,10 +6,6 @@ let userArr = [];
 
 // buttonSubmit for form submission
 let buttonSubmit = document.getElementById('button-submit');
-let income = document.getElementById('income');
-let housing = document.getElementById('housing');
-let food = document.getElementById('food');
-
 
 //Legal Disclaimer function. This is the most basic solution. Stretch goal coul be to  build a more complex modal popup with HTML, CSS, and JS.
 // function disclaimer() {
@@ -18,11 +14,22 @@ let food = document.getElementById('food');
 
 // Constructor function for user objects
 
-function User(person = 'John Doe', income = 1, housing = 0, food = 1) {
+function User(person = 'Joe Doe', income = 1, housing = 0, food = 1, car = 0, insurance = 0, medical = 0, phone = 0, internet = 0, utilities = 0, entertainment = 0, investing = 0, retirement = 0, savings = 0, misc = 0, other = 0) {
   this.person = person;
   this.income = income;
   this.housing = housing;
   this.food = food;
+  this.insurance = insurance;
+  this.medical = medical;
+  this.phone = phone;
+  this.internet = internet;
+  this.utilities = utilities;
+  this.entertainment = entertainment;
+  this.investing = investing;
+  this.retirement = retirement;
+  this.savings = savings;
+  this.misc = misc;
+  this.other = other;
   userArr.push(this);
 
 }
@@ -31,7 +38,7 @@ function User(person = 'John Doe', income = 1, housing = 0, food = 1) {
 let retrievedItem = localStorage.getItem('userObjects');
 
 
-//If data in local storage, get it.
+//If data in local storage, and testing our constructor function
 if (retrievedItem) {
   let parsedItem = JSON.parse(retrievedItem);
   userArr = parsedItem;
@@ -56,18 +63,18 @@ function formBuilder() {
   legend.textContent = '\u{03BC}' + 'Budget Form';
   fieldset.append(legend);
 
-  //Name Input Field of Form
+  //Person Input Field of Form
   let div = document.createElement('div');
-  div.id = 'name';
+  div.id = 'person';
   legend.append(div);
   let label = document.createElement('label');
-  label.for = 'name';
+  label.for = 'person';
   label.textContent = 'Name: ';
   div.append(label);
   let input = document.createElement('input');
   input.type = 'text';
-  input.name = 'name';
-  input.id = 'name';
+  input.name = 'person';
+  input.id = 'person';
   input.placeholder = 'Ex. Elon';
   input.required = 'required';
   label.append(input);
@@ -144,203 +151,203 @@ function formBuilder() {
   input.required = 'required';
   label.append(input);
 
-  // //Insurance Input Field of Form
-  // div = document.createElement('div');
-  // div.id = 'insurance';
-  // legend.append(div);
-  // label = document.createElement('label');
-  // label.for = 'insurance';
-  // label.textContent = 'Insurance: ';
-  // div.append(label);
-  // input = document.createElement('input');
-  // input.type = 'number';
-  // input.name = 'insurance';
-  // input.id = 'insurance';
-  // input.placeholder = 'Ex. 1234';
-  // input.step = 'any';
-  // input.min = '0';
-  // input.required = 'required';
-  // label.append(input);
+  //Insurance Input Field of Form
+  div = document.createElement('div');
+  div.id = 'insurance';
+  legend.append(div);
+  label = document.createElement('label');
+  label.for = 'insurance';
+  label.textContent = 'Insurance: ';
+  div.append(label);
+  input = document.createElement('input');
+  input.type = 'number';
+  input.name = 'insurance';
+  input.id = 'insurance';
+  input.placeholder = 'Ex. 1234';
+  input.step = 'any';
+  input.min = '0';
+  input.required = 'required';
+  label.append(input);
 
-  // //Medical/Healthcare Input Field of Form
-  // div = document.createElement('div');
-  // div.id = 'medical';
-  // legend.append(div);
-  // label = document.createElement('label');
-  // label.for = 'medical';
-  // label.textContent = 'Medical/Healthcare: ';
-  // div.append(label);
-  // input = document.createElement('input');
-  // input.type = 'number';
-  // input.name = 'medical';
-  // input.id = 'medical';
-  // input.placeholder = 'Ex. 1234';
-  // input.step = 'any';
-  // input.min = '0';
-  // input.required = 'required';
-  // label.append(input);
+  //Medical/Healthcare Input Field of Form
+  div = document.createElement('div');
+  div.id = 'medical';
+  legend.append(div);
+  label = document.createElement('label');
+  label.for = 'medical';
+  label.textContent = 'Medical/Healthcare: ';
+  div.append(label);
+  input = document.createElement('input');
+  input.type = 'number';
+  input.name = 'medical';
+  input.id = 'medical';
+  input.placeholder = 'Ex. 1234';
+  input.step = 'any';
+  input.min = '0';
+  input.required = 'required';
+  label.append(input);
 
-  // //Phone Input Field of Form
-  // div = document.createElement('div');
-  // div.id = 'phone';
-  // legend.append(div);
-  // label = document.createElement('label');
-  // label.for = 'phone';
-  // label.textContent = 'Phone: ';
-  // div.append(label);
-  // input = document.createElement('input');
-  // input.type = 'number';
-  // input.name = 'phone';
-  // input.id = 'phone';
-  // input.placeholder = 'Ex. 1234';
-  // input.step = 'any';
-  // input.min = '0';
-  // input.required = 'required';
-  // label.append(input);
+  //Phone Input Field of Form
+  div = document.createElement('div');
+  div.id = 'phone';
+  legend.append(div);
+  label = document.createElement('label');
+  label.for = 'phone';
+  label.textContent = 'Phone: ';
+  div.append(label);
+  input = document.createElement('input');
+  input.type = 'number';
+  input.name = 'phone';
+  input.id = 'phone';
+  input.placeholder = 'Ex. 1234';
+  input.step = 'any';
+  input.min = '0';
+  input.required = 'required';
+  label.append(input);
 
-  // //Internet Input Field of Form
-  // div = document.createElement('div');
-  // div.id = 'Internet';
-  // legend.append(div);
-  // label = document.createElement('label');
-  // label.for = 'Internet';
-  // label.textContent = 'Internet: ';
-  // div.append(label);
-  // input = document.createElement('input');
-  // input.type = 'number';
-  // input.name = 'Internet';
-  // input.id = 'Internet';
-  // input.placeholder = 'Ex. 1234';
-  // input.step = 'any';
-  // input.min = '0';
-  // input.required = 'required';
-  // label.append(input);
+  //Internet Input Field of Form
+  div = document.createElement('div');
+  div.id = 'Internet';
+  legend.append(div);
+  label = document.createElement('label');
+  label.for = 'Internet';
+  label.textContent = 'Internet: ';
+  div.append(label);
+  input = document.createElement('input');
+  input.type = 'number';
+  input.name = 'Internet';
+  input.id = 'Internet';
+  input.placeholder = 'Ex. 1234';
+  input.step = 'any';
+  input.min = '0';
+  input.required = 'required';
+  label.append(input);
 
-  // //Utilities Input Field of Form
-  // div = document.createElement('div');
-  // div.id = 'utilities';
-  // legend.append(div);
-  // label = document.createElement('label');
-  // label.for = 'utilities';
-  // label.textContent = 'Utilities: ';
-  // div.append(label);
-  // input = document.createElement('input');
-  // input.type = 'number';
-  // input.name = 'utilities';
-  // input.id = 'utilities';
-  // input.placeholder = 'Ex. 1234';
-  // input.step = 'any';
-  // input.min = '0';
-  // input.required = 'required';
-  // label.append(input);
+  //Utilities Input Field of Form
+  div = document.createElement('div');
+  div.id = 'utilities';
+  legend.append(div);
+  label = document.createElement('label');
+  label.for = 'utilities';
+  label.textContent = 'Utilities: ';
+  div.append(label);
+  input = document.createElement('input');
+  input.type = 'number';
+  input.name = 'utilities';
+  input.id = 'utilities';
+  input.placeholder = 'Ex. 1234';
+  input.step = 'any';
+  input.min = '0';
+  input.required = 'required';
+  label.append(input);
 
-  // //Entertainment Input Field of Form
-  // div = document.createElement('div');
-  // div.id = 'entertainment';
-  // legend.append(div);
-  // label = document.createElement('label');
-  // label.for = 'entertainment';
-  // label.textContent = 'Entertainment: ';
-  // div.append(label);
-  // input = document.createElement('input');
-  // input.type = 'number';
-  // input.name = 'entertainment';
-  // input.id = 'entertainment';
-  // input.placeholder = 'Ex. 1234';
-  // input.step = 'any';
-  // input.min = '0';
-  // input.required = 'required';
-  // label.append(input);
+  //Entertainment Input Field of Form
+  div = document.createElement('div');
+  div.id = 'entertainment';
+  legend.append(div);
+  label = document.createElement('label');
+  label.for = 'entertainment';
+  label.textContent = 'Entertainment: ';
+  div.append(label);
+  input = document.createElement('input');
+  input.type = 'number';
+  input.name = 'entertainment';
+  input.id = 'entertainment';
+  input.placeholder = 'Ex. 1234';
+  input.step = 'any';
+  input.min = '0';
+  input.required = 'required';
+  label.append(input);
 
-  // //Investing Input Field of Form
-  // div = document.createElement('div');
-  // div.id = 'investing';
-  // legend.append(div);
-  // label = document.createElement('label');
-  // label.for = 'investing';
-  // label.textContent = 'Investing: ';
-  // div.append(label);
-  // input = document.createElement('input');
-  // input.type = 'number';
-  // input.name = 'investing';
-  // input.id = 'investing';
-  // input.placeholder = 'Ex. 1234';
-  // input.step = 'any';
-  // input.min = '0';
-  // input.required = 'required';
-  // label.append(input);
+  //Investing Input Field of Form
+  div = document.createElement('div');
+  div.id = 'investing';
+  legend.append(div);
+  label = document.createElement('label');
+  label.for = 'investing';
+  label.textContent = 'Investing: ';
+  div.append(label);
+  input = document.createElement('input');
+  input.type = 'number';
+  input.name = 'investing';
+  input.id = 'investing';
+  input.placeholder = 'Ex. 1234';
+  input.step = 'any';
+  input.min = '0';
+  input.required = 'required';
+  label.append(input);
 
-  // //Retirement Input Field of Form
-  // div = document.createElement('div');
-  // div.id = 'retirement';
-  // legend.append(div);
-  // label = document.createElement('label');
-  // label.for = 'retirement';
-  // label.textContent = 'Retirement: ';
-  // div.append(label);
-  // input = document.createElement('input');
-  // input.type = 'number';
-  // input.name = 'retirement';
-  // input.id = 'retirement';
-  // input.placeholder = 'Ex. 1234';
-  // input.step = 'any';
-  // input.min = '0';
-  // input.required = 'required';
-  // label.append(input);
+  //Retirement Input Field of Form
+  div = document.createElement('div');
+  div.id = 'retirement';
+  legend.append(div);
+  label = document.createElement('label');
+  label.for = 'retirement';
+  label.textContent = 'Retirement: ';
+  div.append(label);
+  input = document.createElement('input');
+  input.type = 'number';
+  input.name = 'retirement';
+  input.id = 'retirement';
+  input.placeholder = 'Ex. 1234';
+  input.step = 'any';
+  input.min = '0';
+  input.required = 'required';
+  label.append(input);
 
-  // //Savings Input Field of Form
-  // div = document.createElement('div');
-  // div.id = 'savings';
-  // legend.append(div);
-  // label = document.createElement('label');
-  // label.for = 'savings';
-  // label.textContent = 'Savings: ';
-  // div.append(label);
-  // input = document.createElement('input');
-  // input.type = 'number';
-  // input.name = 'savings';
-  // input.id = 'savings';
-  // input.placeholder = 'Ex. 1234';
-  // input.step = 'any';
-  // input.min = '0';
-  // input.required = 'required';
-  // label.append(input);
+  //Savings Input Field of Form
+  div = document.createElement('div');
+  div.id = 'savings';
+  legend.append(div);
+  label = document.createElement('label');
+  label.for = 'savings';
+  label.textContent = 'Savings: ';
+  div.append(label);
+  input = document.createElement('input');
+  input.type = 'number';
+  input.name = 'savings';
+  input.id = 'savings';
+  input.placeholder = 'Ex. 1234';
+  input.step = 'any';
+  input.min = '0';
+  input.required = 'required';
+  label.append(input);
 
-  // //Misc Input Field of Form
-  // div = document.createElement('div');
-  // div.id = 'misc';
-  // legend.append(div);
-  // label = document.createElement('label');
-  // label.for = 'misc';
-  // label.textContent = 'Misc : ';
-  // div.append(label);
-  // input = document.createElement('input');
-  // input.type = 'number';
-  // input.name = 'misc';
-  // input.id = 'misc';
-  // input.placeholder = 'Ex. 1234';
-  // input.step = 'any';
-  // input.min = '0';
-  // input.required = 'required';
-  // label.append(input);
+  //Misc Input Field of Form
+  div = document.createElement('div');
+  div.id = 'misc';
+  legend.append(div);
+  label = document.createElement('label');
+  label.for = 'misc';
+  label.textContent = 'Misc : ';
+  div.append(label);
+  input = document.createElement('input');
+  input.type = 'number';
+  input.name = 'misc';
+  input.id = 'misc';
+  input.placeholder = 'Ex. 1234';
+  input.step = 'any';
+  input.min = '0';
+  input.required = 'required';
+  label.append(input);
 
-  // //other Input Field of Form
-  // div = document.createElement('div');
-  // div.id = 'other';
-  // legend.append(div);
-  // label = document.createElement('label');
-  // label.for = 'other';
-  // label.textContent = 'Other: ';
-  // div.append(label);
-  // input = document.createElement('input');
-  // input.type = 'number';
-  // input.name = 'other';
-  // input.id = 'other';
-  // input.placeholder = 'Ex. 1234';
-  // input.step = 'any';
-  // input.min = '0';
-  // input.required = 'required';
-  // label.append(input);
+  //other Input Field of Form
+  div = document.createElement('div');
+  div.id = 'other';
+  legend.append(div);
+  label = document.createElement('label');
+  label.for = 'other';
+  label.textContent = 'Other: ';
+  div.append(label);
+  input = document.createElement('input');
+  input.type = 'number';
+  input.name = 'other';
+  input.id = 'other';
+  input.placeholder = 'Ex. 1234';
+  input.step = 'any';
+  input.min = '0';
+  input.required = 'required';
+  label.append(input);
 
   //Form Submit Button
   div = document.createElement('div');
@@ -360,12 +367,24 @@ formBuilder();
 //Event Handler function for form submission and instantiates object and saves values to local storage
 function handleFormSubmission(event) {
   event.preventDefault();
-  let name = event.target.name.value;
+  let person = event.target.name.value;
   let income = +event.target.income.value;
   let housing = +event.target.housing.value;
-  let food = +event.target.foood.value;
+  let food = +event.target.food.value;
+  let car = +event.target.car.value;
+  let insurance = +event.target.insurance.value;
+  let medical = +event.target.medical.value;
+  let phone = +event.target.phone.value;
+  let internet = +event.target.internet.value;
+  let utilities = +event.target.utilities.value;
+  let entertainment = +event.target.entertainment.value;
+  let investing = +event.target.investing.value;
+  let retirement = +event.target.retirement.value;
+  let savings = +event.target.savings.value;
+  let misc = +event.target.misc.value;
+  let other = +event.target.other.value;
 
-  new User(name, income, housing, food);
+  new User(person, income, housing, food, car,insurance, medical, phone, internet, utilities, entertainment, investing, retirement, savings, misc, other);
 
 
 }
