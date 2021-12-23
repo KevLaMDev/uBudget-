@@ -2,7 +2,7 @@
 
 ## Code Fellows 201 Projects
 
-## Group Members: Zachary Flowers Kevin LaMarca, Joshua McCluskey
+## Group Members: Zachary Flowers, Kevin LaMarca, Joshua McCluskey
 
 ### Project Prep# 1
 
