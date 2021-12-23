@@ -33,6 +33,11 @@ function FederalTaxCalc() {
   // input: access user's afterTax data 
   // output: render chart, 12 months of income vs expenses 
 
+function renderFinanceTable() {
+  let table = document.getElementById('table'); 
+  let tr = document.createElement('tr');
+  
+}
 
 
 
