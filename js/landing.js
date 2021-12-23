@@ -6,12 +6,15 @@ let userArr = [];
 
 // buttonSubmit for form submission
 let buttonSubmit = document.getElementById('button-submit');
+let income = document.getElementById('income');
+let housing = document.getElementById('housing');
+let food = document.getElementById('food');
 
 
 //Legal Disclaimer function. This is the most basic solution. Stretch goal coul be to  build a more complex modal popup with HTML, CSS, and JS.
-function disclaimer() {
-  alert('Legal Disclaimer:\n\n' + 'The Content is for informational purposes only, you should not construe any such information or other material as legal, tax, investment, financial, or other advice. Nothing contained on our Site constitutes a solicitation, recommendation, endorsement, or offer by \u{03BC}Budget or any third party service provider to buy or sell any securities or other financial instruments in this or in in any other jurisdiction in which such solicitation or offer would be unlawful under the securities laws of such jurisdiction.\n\n' + 'All Content on this site is information of a general nature and does not address the circumstances of any particular individual or entity. Nothing in the Site constitutes professional and/or financial advice, nor does any information on the Site constitute a comprehensive or complete statement of the matters discussed or the law relating thereto. \u{03BC}Budget is not a fiduciary by virtue of any persons use of or access to the Site or Content. You alone assume the sole responsibility of evaluating the merits and risks associated with the use of any information or other Content on the Site before making any decisions based on such information or other Content. In exchange for using the Site, you agree not to hold \u{03BC}Budget, its affiliates or any third party service provider liable for any possible claim for damages arising from any decision you make based on information or other Content made available to you through the Site.');
-}
+// function disclaimer() {
+//   alert('Legal Disclaimer:\n\n' + 'The Content is for informational purposes only, you should not construe any such information or other material as legal, tax, investment, financial, or other advice. Nothing contained on our Site constitutes a solicitation, recommendation, endorsement, or offer by \u{03BC}Budget or any third party service provider to buy or sell any securities or other financial instruments in this or in in any other jurisdiction in which such solicitation or offer would be unlawful under the securities laws of such jurisdiction.\n\n' + 'All Content on this site is information of a general nature and does not address the circumstances of any particular individual or entity. Nothing in the Site constitutes professional and/or financial advice, nor does any information on the Site constitute a comprehensive or complete statement of the matters discussed or the law relating thereto. \u{03BC}Budget is not a fiduciary by virtue of any persons use of or access to the Site or Content. You alone assume the sole responsibility of evaluating the merits and risks associated with the use of any information or other Content on the Site before making any decisions based on such information or other Content. In exchange for using the Site, you agree not to hold \u{03BC}Budget, its affiliates or any third party service provider liable for any possible claim for damages arising from any decision you make based on information or other Content made available to you through the Site.');
+// }
 
 // Constructor function for user objects
 
@@ -33,11 +36,11 @@ if (retrievedItem) {
   let parsedItem = JSON.parse(retrievedItem);
   userArr = parsedItem;
 } else {
-  new User('Seattle', 23, 65, 6.3);
-  new User('Tokyo', 3, 24, 1.2);
-  new User('Dubai', 11, 38, 3.7);
-  new User('Paris', 20, 38, 2.3);
-  new User('Lima', 2, 16, 4.6);
+  new User('Elon', 10000000000, 100000000, 1000000);
+  new User('Student', 20000, 800, 200);
+  new User('Investor', 100000000, 10000, 600);
+  new User('Worker', 50000, 1200, 300);
+  new User('Parent', 80000, 2000, 1000);
 }
 
 // Dynamic form builder function to allow the user to enter name, income, and budget information.
@@ -350,19 +353,25 @@ function formBuilder() {
 }
 
 formBuilder();
-disclaimer();
+// disclaimer();
 
 
 
 //Event Handler function for form submission and instantiates object and saves values to local storage
-function handelFormSubmission(e) {
-  e.preventDefault();
-  let name = e.target.name.value;
-  // let income = +e.target.income.value;
-  // let housing = +e.target.housing.value;
-  // let food = +e.target.foood.value;
+function handleFormSubmission(event) {
+  event.preventDefault();
+  let name = event.target.name.value;
+  let income = +event.target.income.value;
+  let housing = +event.target.housing.value;
+  let food = +event.target.foood.value;
 
   new User(name, income, housing, food);
+
+
+}
+
+function handleButtonClick(event) {
+  event.preventDefault();
 
   //Stingify the properties to be stored in local storage
   let stringifiedUser = JSON.stringify(userArr);
@@ -372,9 +381,10 @@ function handelFormSubmission(e) {
 
 }
 
-
 // Event Listeners
-buttonSubmit.addEventListener('click', handelFormSubmission);
+buttonSubmit.addEventListener('submit', handleFormSubmission);
+
+buttonSubmit.addEventListener('click', handleButtonClick);
 
 
 
