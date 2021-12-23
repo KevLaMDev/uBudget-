@@ -74,7 +74,7 @@ function formBuilder() {
   input.type = 'text';
   input.name = 'person';
   input.id = 'person';
-  input.placeholder = 'Ex. Elon';
+  input.placeholder = 'Ex. Joe Doe';
   input.required = 'required';
   label.appendChild(input);
 
@@ -397,7 +397,7 @@ function handleFormSubmission(event) {
   //Save to local storage
   localStorage.setItem('userObjects', stringifiedUser);
 
-  // window.location.replace('../chart.html');
+  window.location.replace('../chart.html');
 
 
 }
