@@ -3,7 +3,7 @@
 /* Unviversal Selectors: */
 
 * {
-  background-color: #6fa5f7;
+  background-color: #817CA7;
 }
 
 /* Header Selectors: */
@@ -32,7 +32,7 @@ header li {
   display: block;
   margin: 10px 3px 5px 10px;
   font-size: 20px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 nav a {
@@ -52,7 +52,7 @@ h1 {
   text-shadow: whitesmoke;
   justify-content: center;
   font-size: 3em;
-  font-family: Impact, Haettenschweiler, 'Arial', sans-serif;
+  font-family: "Inter", sans-serif;
   margin-top: 30px;
   text-decoration: whitesmoke;
 }
@@ -62,14 +62,16 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   font-size: 30px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Inter", sans-serif;
   margin-top: 30px;
 }
 /* Form Selectors: */
-
+#legend {
+  margin-bottom: 8em;
+}
 #budget-form {
   position: relative;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Inter", sans-serif;
   width: 300px;
   height: 400px;
   display: flex;
@@ -80,7 +82,7 @@ h1 {
 }
 
 ::placeholder {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Inter", sans-serif;
   color: silver;
   opacity: 1;
   font-size: 20px;
@@ -99,7 +101,7 @@ input {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  border: 2px solid Coral;
+  border: 2px solid #FB6376;
   border-radius: 10px;
   text-align: center;
 }
@@ -125,7 +127,7 @@ button {
   margin-bottom: 20%;
   border-radius: 8px;
   font-size: 20px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Inter", sans-serif;
 }
 button:hover {
   background-color: coral;
@@ -150,7 +152,7 @@ margin-right: 30px;
   display: flex;
   justify-content: center;
   font-size: 2em;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: "Inter", sans-serif;
   margin-top: 30px;
   margin-bottom: 5px;
   
@@ -162,6 +164,8 @@ margin-right: 30px;
   margin-right: auto;
   width: 32px;
   justify-content: center;
+  padding: 5px;
+  
 }
 
 #about #zach {
@@ -190,6 +194,10 @@ margin-right: 30px;
 #about  {
   height: 50;
 }
+
+#about p {
+  padding: 5px;
+}
 /* Graph page selectors */
 #graph #myChart {
   
@@ -203,6 +211,43 @@ margin-right: 30px;
   margin-left: auto;
   margin-top: 30px;
   padding: 50px;
+}
+
+/* Resources Page Selectors */
+#resources {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+  margin-left: 30px;
+  margin-right: 30px;
+  
+  }
+  
+#resources h2 {
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  font-family: "Inter", sans-serif;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  }
+
+#resources div {
+  display: block;
+  margin-left: 5%;
+  margin-right: 5%;
+  justify-content: center;
+  }
+
+#resources div.iframe {
+  justify-items: center;
+}
+
+#resources p {
+  font-family: "Inter", sans-serif;
+  margin: 20px;
+  display: block;
+  text-align: center;
 }
 /* Footer Selectors:  */
 
