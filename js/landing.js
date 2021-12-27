@@ -420,13 +420,8 @@ function handleFormSubmission(event) {
 }
 
 // Get the User
-function findCurrentUser() {
-  let user;
-  for (let i = 0; i < userArr.length; i++) {
-    if (userArr[i].person === currentUser) user = userArr[i];
-  }
-  return user;
-};
+
+
 
 let retrievedItem = localStorage.getItem('userObjects');
 
