@@ -1,6 +1,6 @@
 'use strict';
 let userArrChart = [];
-let username; 
+let username;
 let currentUserChart;
 let ctx = document.getElementById('myChart').getContext('2d');
 
@@ -9,7 +9,7 @@ let retrievedItemChart = localStorage.getItem('userObjects');
 if (retrievedItemChart) {
   let parsedItem = JSON.parse(retrievedItemChart);
   userArrChart = parsedItem;
-};
+}
 username = localStorage.getItem('currentUser');
 currentUserChart = findCurrentUser();
 
@@ -54,7 +54,7 @@ function findCurrentUser() {
     if (userArrChart[i].person === username) user = userArrChart[i];
   }
   return user;
-};
+}
 
 console.log(currentUserChart)
 let taxes = taxBracket(currentUserChart); // Total Taxes
@@ -67,7 +67,7 @@ const chartData = {
     datasets: [
       {
         label: "Net Income Vs Taxes and Expenses",
-        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f"],
         data: [
           netIncome, // Take Home Income
           taxes, // Total Taxes
@@ -87,19 +87,19 @@ const chartData = {
 function renderChartPage() {
   renderFinanceTable();
   new Chart(ctx, chartData);
-};
+}
 console.log(currentUserChart)
 renderChartPage();
 
 function taxBracket(obj) {
- let tax;
- if (obj.income >= 523, 601) tax = .37;
- if (obj.income >= 209, 426) tax = .35;
- if (obj.income >= 164, 926) tax = .32;
- if (obj.income >= 86, 376) tax = .24;
- if (obj.income >= 40, 526) tax = .22;
- if (obj.income >= 9, 951) tax = .12;
- if (obj.income < 9, 951) tax = .10;
- let taxes = obj.income * tax;
- return taxes;
-};
+  let tax;
+  if (obj.income >= 523, 601) tax = .37;
+  if (obj.income >= 209, 426) tax = .35;
+  if (obj.income >= 164, 926) tax = .32;
+  if (obj.income >= 86, 376) tax = .24;
+  if (obj.income >= 40, 526) tax = .22;
+  if (obj.income >= 9, 951) tax = .12;
+  if (obj.income < 9, 951) tax = .10;
+  let taxes = obj.income * tax;
+  return taxes;
+}
