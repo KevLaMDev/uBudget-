@@ -5,7 +5,6 @@
 //Global User Objects Array
 let userArr = [];
 let currentUser;
-let inputArr = ['housing', 'food', 'car', 'insurance', 'medical', 'phone', 'internet', 'utilities', 'entertainment', 'investing', 'retirement', 'savings', 'misc', 'other'];
 // Global form variables buttonSubmit for form submission
 let formTag = document.createElement('form');
 let fieldset = document.createElement('fieldset');
@@ -14,7 +13,7 @@ let div = document.createElement('div');
 let label = document.createElement('label');
 let input = document.createElement('input');
 let buttonSubmit = document.getElementById('button-submit');
-let addInputEl = document.getElementById('add-input-form');
+
 
 
 // Constructor function for user objects
@@ -206,8 +205,6 @@ function formMain() {
   input.min = '0';
   label.appendChild(input);
 
-
-
   buttonForm();
 
 }
@@ -215,6 +212,7 @@ function formMain() {
 formMain();
 
 function formBuilder() {
+
   let section = document.getElementById('add-input-form');
   formTag = document.createElement('form');
   formTag.id = 'form-add';
@@ -256,15 +254,18 @@ function formBuilder() {
 
 formBuilder();
 
-function handlerFormBuilder(event) {
+function handleFormBuilder(event) {
+  event.preventDefault();
+
+  console.log('It works');
   let add = event.target.add.value;
-  let fieldset = document.getElementById('expenses');
+  let div1 = document.getElementById('savings');
   div = document.createElement('div');
   div.id = add;
-  fieldset.appendChild(div);
+  div1.appendChild(div);
   label = document.createElement('label');
   label.for = add;
-  label.textContent = 'add/Healthcare: ';
+  label.textContent = add;
   div.appendChild(label);
   input = document.createElement('input');
   input.type = 'number';
@@ -338,7 +339,7 @@ if (retrievedItem) {
 
 // Event Listeners
 document.getElementById('form-main').addEventListener('submit', handleFormSubmission);
-document.getElementById('add-input').addEventListener('submit', handlerFormBuilder);
+document.getElementById('form-add').addEventListener('submit', handleFormBuilder)
 
 
 // // //Insurance Input Field of Form
