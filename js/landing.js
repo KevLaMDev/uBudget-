@@ -390,9 +390,31 @@ function handleFormSubmission(event) {
   let savings = +event.target.savings.value;
   let misc = +event.target.misc.value;
   let other = +event.target.other.value;
-
-
   currentUser = person;
+  
+  // control flow: If object 
+  for (let i = 0; i < userArr.length; i++) {
+    if (userArr[i].person === person) {
+      userArr[i].income = income;
+      userArr[i].housing = housing;
+      userArr[i].food = food;
+      userArr[i].car = car;
+      userArr[i].insurance = insurance;
+      userArr[i].medical = medical;
+      userArr[i].phone = phone;
+      userArr[i].internet = internet;
+      userArr[i].utilities = utilities;
+      userArr[i].entertainment = entertainment;
+      userArr[i].investing = investing;
+      userArr[i].retirement = retirement;
+      userArr[i].savings = savings;
+      userArr[i].misc = misc;
+      userArr[i].other = other;
+    } else {
+      new User(person, income, housing, food, car, insurance, medical, phone, internet, utilities, entertainment, investing, retirement, savings, misc, other);
+    }
+  }
+
   new User(person, income, housing, food, car, insurance, medical, phone, internet, utilities, entertainment, investing, retirement, savings, misc, other);
   //Stingify the properties to be stored in local storage 
   let stringifiedUser = JSON.stringify(userArr);
