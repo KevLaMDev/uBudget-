@@ -33,7 +33,7 @@ function User(person = 'Joe Doe', income = 1, housing = 0, food = 1, car = 0, in
   userArr.push(this);
 }
 
-User.prototype.sumExpenses = function() {
+User.prototype.sumExpenses = function () {
   let sum = 0;
   sum += this.housing;
   sum += this.food;
@@ -51,7 +51,7 @@ User.prototype.sumExpenses = function() {
   return sum;
 };
 
-User.prototype.federalTaxCalc = function() {
+User.prototype.federalTaxCalc = function () {
   let tax;
   if (this.income >= 523, 601) tax = .37;
   if (this.income >= 209, 426) tax = .35;
@@ -390,6 +390,7 @@ function handleFormSubmission(event) {
   let savings = +event.target.savings.value;
   let misc = +event.target.misc.value;
   let other = +event.target.other.value;
+
   currentUser = person;
   
   // control flow: If object 

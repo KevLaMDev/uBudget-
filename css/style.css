@@ -199,19 +199,43 @@ margin-right: 30px;
   padding: 5px;
 }
 /* Graph page selectors */
-#graph #myChart {
+
+
+#graph div {
   
-  width: 1500;
-  height: 1500; 
+  margin-top: 10px;
+  align-items: center;
+  padding: 10px;
+}
+#graph #myChart {
   display: block; 
-  box-sizing: border-box; 
   height: 619px; 
   width: 619px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 30px;
-  padding: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+
 }
+
+#graph table {
+  text-align: center;
+  width: 619px;
+  height: 300;
+  border: 4px solid #5C7CC0;
+
+  align-content: center;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+#graph td, th {
+  border: 1px solid #637CBC;
+  padding: 8px;
+}
+
 
 /* Resources Page Selectors */
 #resources {
@@ -255,17 +279,7 @@ footer {
   margin-top: 30%;
 }
 
-/* footer #text {
-  padding: 1px;
 
 
-} */
 
-#graph>div {
-  display: flex;
-  align-items: center;
-};
 
-table {
-  margin: auto;
-}

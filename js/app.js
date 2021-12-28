@@ -1,5 +1,6 @@
 'use strict';
 let userArrChart = [];
+
 let currentUserChart;
 let ctx = document.getElementById('myChart').getContext('2d');
 
@@ -9,9 +10,11 @@ if (retrievedItemChart) {
   let parsedItem = JSON.parse(retrievedItemChart);
   userArrChart = parsedItem;
 }
+
 // access saved named in local storage
 let username = localStorage.getItem('currentUser');
 // find correct obj instance via association w/ person property
+
 currentUserChart = findCurrentUser();
 
 // renders the finances table
@@ -45,7 +48,7 @@ function renderFinanceTable() {
   td = document.createElement('td');
   td.textContent = (currentUserChart.afterTax / 12) - currentUserChart.totalExpenses;
   tr.appendChild(td);
-};
+}
 
 // associates saved name input with correct obj instance 
 function findCurrentUser() {
@@ -56,15 +59,19 @@ function findCurrentUser() {
   return user;
 }
 
+
 const chartData = {
   type: 'doughnut',
   data: {
-    labels: ["Annual Net Income", "Annual Taxes", "Annual Expenses"],
+    labels: ['Annual Net Income', 'Annual Taxes', 'Annual Expenses'],
     datasets: [
       {
-        label: "Net Income Vs Taxes and Expenses",
-        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f"],
-        data: [
+        label: 'Net Income Vs Taxes and Expenses',
+        backgroundColor: ['#3e95cd', '#8e5ea2', '#3cba9f'],
+        hoverOffset: 10,
+        rotation: 180,
+        borderColor: '#497BCE',
+         data: [
           currentUserChart.afterTax - currentUserChart.totalExpenses, // Take Home Income
           taxBracket(currentUserChart)[0], // Total Taxes
           currentUserChart.totalExpenses * 12 // Total expenses
@@ -87,6 +94,7 @@ function renderChartPage() {
 }
 console.log(currentUserChart)
 renderChartPage();
+
 
 // returns array of annual taxes and net income afterTax
 function taxBracket(obj, income) {
@@ -210,6 +218,7 @@ function button2EventHandler(event) {
     alert('Please enter a valid number.')
   }
 }
+
 
 
 
