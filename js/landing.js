@@ -135,7 +135,6 @@ function formBuilder() {
   input.placeholder = 'Ex. 1234';
   input.step = 'any';
   input.min = '0';
-  input.required = 'required';
   label.appendChild(input);
 
   //Food Input Field of Form
@@ -153,7 +152,6 @@ function formBuilder() {
   input.placeholder = 'Ex. 1234';
   input.step = 'any';
   input.min = '0';
-  input.required = 'required';
   label.appendChild(input);
 
   //Car Input Field of Form
@@ -171,7 +169,6 @@ function formBuilder() {
   input.placeholder = 'Ex. 1234';
   input.step = 'any';
   input.min = '0';
-  input.required = 'required';
   label.appendChild(input);
 
   //Insurance Input Field of Form
@@ -189,7 +186,6 @@ function formBuilder() {
   input.placeholder = 'Ex. 1234';
   input.step = 'any';
   input.min = '0';
-  input.required = 'required';
   label.appendChild(input);
 
   //Medical/Healthcare Input Field of Form
@@ -207,7 +203,6 @@ function formBuilder() {
   input.placeholder = 'Ex. 1234';
   input.step = 'any';
   input.min = '0';
-  input.required = 'required';
   label.appendChild(input);
 
   //Phone Input Field of Form
@@ -225,7 +220,6 @@ function formBuilder() {
   input.placeholder = 'Ex. 1234';
   input.step = 'any';
   input.min = '0';
-  input.required = 'required';
   label.appendChild(input);
 
   //Internet Input Field of Form
@@ -243,7 +237,6 @@ function formBuilder() {
   input.placeholder = 'Ex. 1234';
   input.step = 'any';
   input.min = '0';
-  input.required = 'required';
   label.appendChild(input);
 
   //Utilities Input Field of Form
@@ -261,7 +254,6 @@ function formBuilder() {
   input.placeholder = 'Ex. 1234';
   input.step = 'any';
   input.min = '0';
-  input.required = 'required';
   label.appendChild(input);
 
   //Entertainment Input Field of Form
@@ -279,7 +271,6 @@ function formBuilder() {
   input.placeholder = 'Ex. 1234';
   input.step = 'any';
   input.min = '0';
-  input.required = 'required';
   label.appendChild(input);
 
   //Investing Input Field of Form
@@ -297,7 +288,6 @@ function formBuilder() {
   input.placeholder = 'Ex. 1234';
   input.step = 'any';
   input.min = '0';
-  input.required = 'required';
   label.appendChild(input);
 
   //Retirement Input Field of Form
@@ -315,7 +305,6 @@ function formBuilder() {
   input.placeholder = 'Ex. 1234';
   input.step = 'any';
   input.min = '0';
-  input.required = 'required';
   label.appendChild(input);
 
   //Savings Input Field of Form
@@ -333,7 +322,6 @@ function formBuilder() {
   input.placeholder = 'Ex. 1234';
   input.step = 'any';
   input.min = '0';
-  input.required = 'required';
   label.appendChild(input);
 
   //Misc Input Field of Form
@@ -351,7 +339,6 @@ function formBuilder() {
   input.placeholder = 'Ex. 1234';
   input.step = 'any';
   input.min = '0';
-  input.required = 'required';
   label.appendChild(input);
 
   // other Input Field of Form
@@ -369,7 +356,6 @@ function formBuilder() {
   input.placeholder = 'Ex. 1234';
   input.step = 'any';
   input.min = '0';
-  input.required = 'required';
   label.appendChild(input);
 
   //Form Submit Button
@@ -405,8 +391,31 @@ function handleFormSubmission(event) {
   let misc = +event.target.misc.value;
   let other = +event.target.other.value;
 
-
   currentUser = person;
+  
+  // control flow: If object 
+  for (let i = 0; i < userArr.length; i++) {
+    if (userArr[i].person === person) {
+      userArr[i].income = income;
+      userArr[i].housing = housing;
+      userArr[i].food = food;
+      userArr[i].car = car;
+      userArr[i].insurance = insurance;
+      userArr[i].medical = medical;
+      userArr[i].phone = phone;
+      userArr[i].internet = internet;
+      userArr[i].utilities = utilities;
+      userArr[i].entertainment = entertainment;
+      userArr[i].investing = investing;
+      userArr[i].retirement = retirement;
+      userArr[i].savings = savings;
+      userArr[i].misc = misc;
+      userArr[i].other = other;
+    } else {
+      new User(person, income, housing, food, car, insurance, medical, phone, internet, utilities, entertainment, investing, retirement, savings, misc, other);
+    }
+  }
+
   new User(person, income, housing, food, car, insurance, medical, phone, internet, utilities, entertainment, investing, retirement, savings, misc, other);
   //Stingify the properties to be stored in local storage 
   let stringifiedUser = JSON.stringify(userArr);
