@@ -14,6 +14,10 @@ let label = document.createElement('label');
 let input = document.createElement('input');
 let buttonSubmit = document.getElementById('button-submit');
 
+let custom = [];
+let inputCounter = 0;
+let customName = 'custom';
+
 
 
 // Constructor function for user objects
@@ -256,6 +260,9 @@ formBuilder();
 
 function handleFormBuilder(event) {
   event.preventDefault();
+  inputCounter++;
+
+  console.log(inputCounter);
 
   console.log('It works');
   let add = event.target.add.value;
@@ -264,17 +271,24 @@ function handleFormBuilder(event) {
   div.id = add;
   div1.appendChild(div);
   label = document.createElement('label');
-  label.for = add;
+  label.for = customName + inputCounter;
   label.textContent = add;
   div.appendChild(label);
   input = document.createElement('input');
   input.type = 'number';
-  input.name = add;
-  input.id = add;
+  input.name = customName + inputCounter;
+  input.id = customName + inputCounter;
   input.placeholder = 'Ex. 1234';
   input.step = 'any';
   input.min = '0';
   label.appendChild(input);
+
+  custom.push(customName + inputCounter);
+
+  console.log(custom);
+
+  // input.addEventListener('')
+  // querySelector('div:nth-child())'
 
 }
 
@@ -285,12 +299,34 @@ function handleFormBuilder(event) {
 function handleFormSubmission(event) {
   event.preventDefault();
   console.log('I am here');
+
+
   let person = event.target.person.value;
   let income = +event.target.income.value;
   let housing = +event.target.housing.value;
   let food = +event.target.food.value;
   let car = +event.target.car.value;
   let savings = +event.target.savings.value;
+
+  // for (let i = 0; i < custom.length; i++){
+  //   let custom[i] = event.target.custom[i];
+  //   document.querySelector('div:nth-child([i])');
+  // }
+
+  
+
+  for (let i = 0; i < custom.length; i++){
+    console.log(custom[i]);
+    let customId = document.getElementById(custom[i]);
+    window['custom' + i] = customId.value;
+    console.log(custom[i]);
+    // let customGet = +event.target.ge.value;
+    // document.getElementById('custom[i]');
+
+    // console.log(customGet);
+  }
+
+
   // let insurance = +event.target.insurance.value;
   // let medical = +event.target.medical.value;
   // let phone = +event.target.phone.value;
@@ -313,7 +349,7 @@ function handleFormSubmission(event) {
   localStorage.setItem('userObjects', stringifiedUser);
   localStorage.setItem('currentUser', currentUser);
   console.log(userArr);
-  window.location.replace('../chart.html');
+  // window.location.replace('../chart.html');
 
 }
 
@@ -340,6 +376,7 @@ if (retrievedItem) {
 // Event Listeners
 document.getElementById('form-main').addEventListener('submit', handleFormSubmission);
 document.getElementById('form-add').addEventListener('submit', handleFormBuilder)
+
 
 
 // // //Insurance Input Field of Form
