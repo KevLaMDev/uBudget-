@@ -424,7 +424,8 @@ function handleFormSubmission(event) {
   localStorage.setItem('userObjects', stringifiedUser);
   localStorage.setItem('currentUser', currentUser);
   console.log(userArr);
-  window.location.replace('../chart.html');
+  // window.location.replace('../chart.html');
+  window.location.replace('https://ubugdetorg.github.io/uBudget-/chart.html');
 
 }
 
