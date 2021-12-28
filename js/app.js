@@ -71,7 +71,7 @@ const chartData = {
         hoverOffset: 10,
         rotation: 180,
         borderColor: '#497BCE',
-         data: [
+        data: [
           currentUserChart.afterTax - currentUserChart.totalExpenses, // Take Home Income
           taxBracket(currentUserChart)[0], // Total Taxes
           currentUserChart.totalExpenses * 12 // Total expenses
