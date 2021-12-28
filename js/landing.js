@@ -31,9 +31,9 @@ function User(person = 'Joe Doe', income = 1, housing = 0, food = 1, car = 0, in
   this.afterTax = this.federalTaxCalc();
   this.totalExpenses = this.sumExpenses();
   userArr.push(this);
-};
+}
 
-User.prototype.sumExpenses = function() {
+User.prototype.sumExpenses = function () {
   let sum = 0;
   sum += this.housing;
   sum += this.food;
@@ -51,7 +51,7 @@ User.prototype.sumExpenses = function() {
   return sum;
 };
 
-User.prototype.federalTaxCalc = function() {
+User.prototype.federalTaxCalc = function () {
   let tax;
   if (this.income >= 523, 601) tax = .37;
   if (this.income >= 209, 426) tax = .35;
@@ -78,7 +78,7 @@ function formBuilder() {
   let legend = document.createElement('legend');
   legend.textContent = '\u{03BC}' + 'Budget Form';
   fieldset.appendChild(legend);
-  
+
   //Fieldset Name and Income
   //Person Input Field of Form
   let div = document.createElement('div');
@@ -95,7 +95,7 @@ function formBuilder() {
   input.placeholder = 'Ex. Joe Doe';
   input.required = 'required';
   label.appendChild(input);
-  
+
   //Income Input Field of Form
   div = document.createElement('div');
   div.id = 'income';
@@ -113,13 +113,13 @@ function formBuilder() {
   input.min = '1';
   input.required = 'required';
   label.appendChild(input);
-  
-  
+
+
   //Fieldset Expenses:
   fieldset = document.createElement('fieldset');
   fieldset.id = 'expenses';
   formTag.appendChild(fieldset);
-  
+
   //Housing Input Field of Form
   div = document.createElement('div');
   div.id = 'housing';
@@ -137,7 +137,7 @@ function formBuilder() {
   input.min = '0';
   input.required = 'required';
   label.appendChild(input);
-  
+
   //Food Input Field of Form
   div = document.createElement('div');
   div.id = 'food';
@@ -155,7 +155,7 @@ function formBuilder() {
   input.min = '0';
   input.required = 'required';
   label.appendChild(input);
-  
+
   //Car Input Field of Form
   div = document.createElement('div');
   div.id = 'car';
@@ -173,7 +173,7 @@ function formBuilder() {
   input.min = '0';
   input.required = 'required';
   label.appendChild(input);
-  
+
   //Insurance Input Field of Form
   div = document.createElement('div');
   div.id = 'insurance';
@@ -191,7 +191,7 @@ function formBuilder() {
   input.min = '0';
   input.required = 'required';
   label.appendChild(input);
-  
+
   //Medical/Healthcare Input Field of Form
   div = document.createElement('div');
   div.id = 'medical';
@@ -209,7 +209,7 @@ function formBuilder() {
   input.min = '0';
   input.required = 'required';
   label.appendChild(input);
-  
+
   //Phone Input Field of Form
   div = document.createElement('div');
   div.id = 'phone';
@@ -227,7 +227,7 @@ function formBuilder() {
   input.min = '0';
   input.required = 'required';
   label.appendChild(input);
-  
+
   //Internet Input Field of Form
   div = document.createElement('div');
   div.id = 'internet';
@@ -245,7 +245,7 @@ function formBuilder() {
   input.min = '0';
   input.required = 'required';
   label.appendChild(input);
-  
+
   //Utilities Input Field of Form
   div = document.createElement('div');
   div.id = 'utilities';
@@ -263,7 +263,7 @@ function formBuilder() {
   input.min = '0';
   input.required = 'required';
   label.appendChild(input);
-  
+
   //Entertainment Input Field of Form
   div = document.createElement('div');
   div.id = 'entertainment';
@@ -281,7 +281,7 @@ function formBuilder() {
   input.min = '0';
   input.required = 'required';
   label.appendChild(input);
-  
+
   //Investing Input Field of Form
   div = document.createElement('div');
   div.id = 'investing';
@@ -299,7 +299,7 @@ function formBuilder() {
   input.min = '0';
   input.required = 'required';
   label.appendChild(input);
-  
+
   //Retirement Input Field of Form
   div = document.createElement('div');
   div.id = 'retirement';
@@ -317,7 +317,7 @@ function formBuilder() {
   input.min = '0';
   input.required = 'required';
   label.appendChild(input);
-  
+
   //Savings Input Field of Form
   div = document.createElement('div');
   div.id = 'savings';
@@ -335,7 +335,7 @@ function formBuilder() {
   input.min = '0';
   input.required = 'required';
   label.appendChild(input);
-  
+
   //Misc Input Field of Form
   div = document.createElement('div');
   div.id = 'misc';
@@ -353,7 +353,7 @@ function formBuilder() {
   input.min = '0';
   input.required = 'required';
   label.appendChild(input);
-  
+
   // other Input Field of Form
   div = document.createElement('div');
   div.id = 'other';
@@ -371,7 +371,7 @@ function formBuilder() {
   input.min = '0';
   input.required = 'required';
   label.appendChild(input);
-  
+
   //Form Submit Button
   div = document.createElement('div');
   div.id = 'button-submit';
@@ -380,7 +380,7 @@ function formBuilder() {
   buttonSubmit.type = 'submit';
   buttonSubmit.textContent = 'Submit';
   div.appendChild(buttonSubmit);
-  
+
 }
 
 
@@ -404,19 +404,19 @@ function handleFormSubmission(event) {
   let savings = +event.target.savings.value;
   let misc = +event.target.misc.value;
   let other = +event.target.other.value;
-  
-  
+
+
   currentUser = person;
   new User(person, income, housing, food, car, insurance, medical, phone, internet, utilities, entertainment, investing, retirement, savings, misc, other);
   //Stingify the properties to be stored in local storage 
   let stringifiedUser = JSON.stringify(userArr);
-  
+
   //Save to local storage
   localStorage.setItem('userObjects', stringifiedUser);
   localStorage.setItem('currentUser', currentUser);
   console.log(userArr);
   window.location.replace('../chart.html');
-  
+
 }
 
 // Get the User
@@ -436,7 +436,7 @@ if (retrievedItem) {
   new User('Investor', 100000000, 10000, 600);
   new User('Worker', 50000, 1200, 300);
   new User('Parent', 80000, 2000, 1000);
-};
+}
 
 formBuilder();
 
