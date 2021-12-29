@@ -32,7 +32,7 @@ function renderFinanceTable() {
   th.textContent = 'Monthly Income';
   tr.appendChild(th);
   th = document.createElement('th');
-  th.textContent = 'Monthly Expenses'
+  th.textContent = 'Monthly Expenses';
   tr.appendChild(th);
   th = document.createElement('th');
   th.textContent = 'Remaining Funds';
@@ -42,7 +42,7 @@ function renderFinanceTable() {
   let td = document.createElement('td');
   td.textContent = currentUserChart.afterTax / 12;
   tr.appendChild(td);
-  td = document.createElement('td')
+  td = document.createElement('td');
   td.textContent = currentUserChart.totalExpenses;
   tr.appendChild(td);
   td = document.createElement('td');
@@ -50,7 +50,7 @@ function renderFinanceTable() {
   tr.appendChild(td);
 }
 
-// associates saved name input with correct obj instance 
+// associates saved name input with correct obj instance
 function findCurrentUser() {
   let user;
   for (let i = 0; i < userArrChart.length; i++) {
@@ -92,7 +92,7 @@ function renderChartPage() {
   renderFinanceTable();
   new Chart(ctx, chartData);
 }
-console.log(currentUserChart)
+console.log(currentUserChart);
 renderChartPage();
 
 
@@ -123,16 +123,16 @@ function taxBracket(obj, income) {
     afterTax = income - taxes;
   }
   return [taxes, afterTax];
-};
+}
 
-// code in button in chart.html 
+// code in button in chart.html
 // add event listener to button
 // create cb event handler
-// event handler will create a new form below the chart: 
+// event handler will create a new form below the chart:
 // 1 input field: income
 // save input from formName.target.income.value
 // chartData.data.datasets[0].data[0] = taxBracket(null, input) - currentUserChart.totalExpenses
-// ctx = null; 
+// ctx = null;
 // renderChartPage()
 
 let button = document.getElementById('button1');
@@ -149,19 +149,19 @@ function button1EventHandler(event) {
   fieldset.appendChild(label);
   label.for = 'income';
   label.name = 'income';
-  label.innerHTML = 'New Income:'
+  label.innerHTML = 'New Income:';
   let input = document.createElement('input');
   fieldset.appendChild(input);
   input.type = 'number';
   input.name = 'income';
   input.id = 'income';
   let submit = document.createElement('button');
-  submit.innerHTML = 'Submit'
+  submit.innerHTML = 'Submit';
   fieldset.appendChild(submit);
-  button.removeEventListener('click', button1EventHandler)
+  button.removeEventListener('click', button1EventHandler);
 
   form.addEventListener('submit', button2EventHandler);
-};
+}
 
 // handles submission of the form; updates chart data object with new data, deletes the old chart and re-renders a new chart
 function button2EventHandler(event) {
@@ -175,8 +175,8 @@ function button2EventHandler(event) {
     chart.remove();
     chart = document.createElement('canvas');
     chart.id = 'myChart';
-    chart.width = '1400'
-    chart.height = '1400'
+    chart.width = '1400';
+    chart.height = '1400';
     let div = document.getElementById('chart');
     div.appendChild(chart);
     ctx = document.getElementById('myChart').getContext('2d');
@@ -198,7 +198,7 @@ function button2EventHandler(event) {
     th.textContent = 'Monthly Income';
     tr.appendChild(th);
     th = document.createElement('th');
-    th.textContent = 'Monthly Expenses'
+    th.textContent = 'Monthly Expenses';
     tr.appendChild(th);
     th = document.createElement('th');
     th.textContent = 'Remaining Funds';
@@ -208,14 +208,14 @@ function button2EventHandler(event) {
     let td = document.createElement('td');
     td.textContent = taxBracket(undefined, newIncome)[1] / 12;
     tr.appendChild(td);
-    td = document.createElement('td')
+    td = document.createElement('td');
     td.textContent = currentUserChart.totalExpenses;
     tr.appendChild(td);
     td = document.createElement('td');
     td.textContent = (taxBracket(undefined, newIncome)[1] / 12) - currentUserChart.totalExpenses;
     tr.appendChild(td);
   } else {
-    alert('Please enter a valid number.')
+    alert('Please enter a valid number.');
   }
 }
 
