@@ -8,10 +8,13 @@ let currentUser;
 // buttonSubmit for form submission
 let buttonSubmit = document.getElementById('button-submit');
 
+//legal disclaimer alert
+alert('Legal Disclaimer: \n\nThe Content is for informational purposes only, you should not construe any such information or other material as legal, tax, investment, financial, or other advice. Nothing contained on our Site constitutes a solicitation, recommendation, endorsement, or offer by μBudget or any third party service provider to buy or sell any securities or other financial instruments in this or in in any other jurisdiction in which such solicitation or offer would be unlawful under the securities laws of such jurisdiction.\n\nAll Content on this site is information of a general nature and does not address the circumstances of any particular individual or entity. Nothing in the Site constitutes professional and/or financial advice, nor does any information on the Site constitute a comprehensive or complete statement of the matters discussed or the law relating thereto. μBudget is not a fiduciary by virtue of any person’s use of or access to the Site or Content. You alone assume the sole responsibility of evaluating the merits and risks associated with the use of any information or other Content on the Site before making any decisions based on such information or other Content. In exchange for using the Site, you agree not to hold μBudget, its affiliates or any third party service provider liable for any possible claim for damages arising from any decision you make based on information or other Content made available to you through the Site.');
+
 
 // // Constructor function for user objects
 
-function User(person = 'Joe Doe', income = 1, housing = 0, food = 1, car = 0, insurance = 0, medical = 0, phone = 0, internet = 0, utilities = 0, entertainment = 0, investing = 0, retirement = 0, savings = 0, misc = 0, other = 0) {
+function User(person = 'Joe Doe', income = 1, housing = 0, food = 0, car = 0, insurance = 0, medical = 0, phone = 0, internet = 0, utilities = 0, entertainment = 0, investing = 0, retirement = 0, savings = 0, misc = 0, other = 0) {
   this.person = person;
   this.income = income;
   this.housing = housing;
@@ -392,8 +395,8 @@ function handleFormSubmission(event) {
   let other = +event.target.other.value;
 
   currentUser = person;
-  
-  // control flow: If object 
+
+  // control flow: If object
   for (let i = 0; i < userArr.length; i++) {
     if (userArr[i].person === person) {
       userArr[i].income = income;
@@ -417,7 +420,7 @@ function handleFormSubmission(event) {
   }
 
   new User(person, income, housing, food, car, insurance, medical, phone, internet, utilities, entertainment, investing, retirement, savings, misc, other);
-  //Stingify the properties to be stored in local storage 
+  //Stingify the properties to be stored in local storage
   let stringifiedUser = JSON.stringify(userArr);
 
   //Save to local storage

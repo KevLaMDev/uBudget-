@@ -137,6 +137,10 @@ button:hover {
   opacity: 0.8;
 }
 
+#form {
+  
+}
+
 /* About Us Page Selectors: */
 
 #about {
@@ -197,6 +201,7 @@ margin-right: 30px;
 
 #about p {
   padding: 5px;
+  font-family: "Inter", sans-serif;
 }
 /* Graph page selectors */
 
@@ -234,6 +239,7 @@ margin-right: 30px;
 #graph td, th {
   border: 1px solid #637CBC;
   padding: 8px;
+  font-family: "Inter", sans-serif;
 }
 
 
